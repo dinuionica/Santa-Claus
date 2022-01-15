@@ -41,13 +41,13 @@ public final class AnnualRound {
 
         command.calculateBudgetUnit(input, childrenList);
 
-        command.applyBlankPink(childrenList);
+        command.applyChangesBlackPinkElves(childrenList);
 
         command.applyStrategies(input, childrenList, numberRound);
 
         command.awardingGifts(childrenList, giftsList);
 
-        command.applyYellow(childrenList, giftsList);
+        command.applyChangesYellowElf(childrenList, giftsList);
 
         CreateOutput.createNewOutput(childrenList, output);
     }

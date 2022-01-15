@@ -3,7 +3,6 @@ package actions;
 import child.Child;
 import common.Gift;
 import enums.Category;
-import enums.CityStrategyEnum;
 import enums.ElvesType;
 import input.ChildInputData;
 import input.ChildUpdateData;
@@ -210,9 +209,12 @@ public final class Command {
             if (child.getAge() <= MAXIMUM_AGE_TEEN) {
                 /* calculate the average score */
                 child.calculateAverageScore();
+
+                /* update to average nice score if there is a nice bonus score */
                 Double currentScore = child.getAverageScore();
                 if (child.getNiceScoreBonus() != null) {
                     currentScore += currentScore * child.getNiceScoreBonus() / PERCENT;
+                    /* if the score exceeds the maximum value, it is truncated */
                     if (currentScore > MAX_VALUE_AVERAGE_SCORE) {
                         currentScore = MAX_VALUE_AVERAGE_SCORE;
                     }
@@ -280,34 +282,39 @@ public final class Command {
     }
 
     /**
-     *
-     * @param input
-     * @param childrenList
-     * @param numberRound
+     * The method that applies the strategies of awarding  gifs
+     * @param input the input data
+     * @param childrenList the children list
+     * @param numberRound the number of round
      */
     public void applyStrategies(final Input input, final List<Child> childrenList,
                                 final int numberRound) {
-
-        if (input.getAnnualChanges().get(numberRound).getStrategy().equals(CityStrategyEnum.ID)) {
-            Context context = new Context(new IdStrategy());
-            context.executeStrategy(childrenList);
-
-        } else if (input.getAnnualChanges().get(numberRound).getStrategy()
-                   .equals(CityStrategyEnum.NICE_SCORE)) {
-            Context context = new Context(new AverageScoreStrategy());
-            context.executeStrategy(childrenList);
-        } else if (input.getAnnualChanges().get(numberRound).getStrategy()
-                   .equals(CityStrategyEnum.NICE_SCORE_CITY)) {
-            Context context = new Context(new NiceScoreCityStrategy());
-            context.executeStrategy(childrenList);
+        /* applying of strategies depending on the input parameter */
+        switch (input.getAnnualChanges().get(numberRound).getStrategy()) {
+            case ID -> {
+                Context context = new Context(new IdStrategy());
+                context.executeStrategy(childrenList);
+            }
+            case NICE_SCORE -> {
+                Context context = new Context(new AverageScoreStrategy());
+                context.executeStrategy(childrenList);
+            }
+            case NICE_SCORE_CITY -> {
+                Context context = new Context(new NiceScoreCityStrategy());
+                context.executeStrategy(childrenList);
+            }
+            default -> {
+                System.out.println("The strategy is not recognized.");
+            }
         }
     }
 
     /**
-     *
-     * @param childrenList
+     * The method that applies changes specific to black and pink elves
+     * @param childrenList the children list
      */
-    public void applyBlankPink(final List<Child> childrenList) {
+    public void applyChangesBlackPinkElves(final List<Child> childrenList) {
+        /* visitor implementation specific of a black or pink elf */
         for (Child child: childrenList) {
             if (child.getElf().equals(ElvesType.PINK)) {
                 PinkElfVisitor pinkElf = new PinkElfVisitor();
@@ -320,11 +327,12 @@ public final class Command {
     }
 
     /**
-     *
-     * @param childrenList
-     * @param giftsList
+     * The method that applies changes specific of a yellow elf
+     * @param childrenList the children list
+     * @param giftsList the gifts list
      */
-    public void applyYellow(final List<Child> childrenList, final List<Gift> giftsList) {
+    public void applyChangesYellowElf(final List<Child> childrenList, final List<Gift> giftsList) {
+        /* visitor implementation specific of a yellow elf */
         for (Child child: childrenList) {
             if (child.getElf().equals(ElvesType.YELLOW)) {
                 YellowElfVisitor yellowElf = new YellowElfVisitor(giftsList);

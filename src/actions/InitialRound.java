@@ -29,11 +29,11 @@ public final class InitialRound {
 
         command.calculateBudgetUnit(input, childrenList);
 
-        command.applyBlankPink(childrenList);
+        command.applyChangesBlackPinkElves(childrenList);
 
         command.awardingGifts(childrenList, giftsList);
 
-        command.applyYellow(childrenList, giftsList);
+        command.applyChangesYellowElf(childrenList, giftsList);
 
         CreateOutput.createNewOutput(childrenList, output);
     }

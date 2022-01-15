@@ -2,7 +2,7 @@ package actions;
 
 import child.Child;
 import common.Gift;
-import common.GiftOutputData;
+import output.GiftOutputData;
 import output.ChildOutputData;
 import output.ChildOutputList;
 import output.Output;

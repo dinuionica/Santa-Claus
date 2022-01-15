@@ -215,8 +215,8 @@ public class Child implements Visitable {
     }
 
     /**
-     *
-     * @param visitor
+     * The method by which a child is visited by an elf
+     * @param visitor the visitor
      */
     @Override
     public void accept(final Visitor visitor) {

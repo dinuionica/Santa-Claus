@@ -1,12 +1,12 @@
 package interfaces;
 
 /**
- * The visitor interface
+ * The visitable interface used for the visitor pattern
  */
 public interface Visitor {
     /**
-     *
-     * @param visitable
+     * The method by which the visitable type operation is applied
+     * @param visitable the visitable instance
      */
     void visit(Visitable visitable);
 }

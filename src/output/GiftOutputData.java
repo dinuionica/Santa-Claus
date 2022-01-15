@@ -1,5 +1,6 @@
-package common;
+package output;
 
+import common.Gift;
 import enums.Category;
 
 /**
