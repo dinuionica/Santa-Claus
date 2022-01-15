@@ -20,6 +20,7 @@ public final class Constants {
     public static final Double AVERAGE_SCORE_BABY = 10.0;
     public static final int PROCENT_VALUE = 30;
     public static final int PERCENT = 100;
+    public static final Double MAX_VALUE_AVERAGE_SCORE = 10.0;
 
 
     private Constants() {

@@ -23,7 +23,12 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-import static common.Constants.*;
+import static common.Constants.AVERAGE_SCORE_BABY;
+import static common.Constants.MAXIMUM_AGE_BABY;
+import static common.Constants.MAXIMUM_AGE_TEEN;
+import static common.Constants.MAX_VALUE_AVERAGE_SCORE;
+import static common.Constants.PERCENT;
+
 
 public final class Command {
     private static Command instanceCommand = null;
@@ -205,13 +210,13 @@ public final class Command {
             if (child.getAge() <= MAXIMUM_AGE_TEEN) {
                 /* calculate the average score */
                 child.calculateAverageScore();
-                Double currentAverageScore = child.getAverageScore();
+                Double currentScore = child.getAverageScore();
                 if (child.getNiceScoreBonus() != null) {
-                    currentAverageScore += currentAverageScore * child.getNiceScoreBonus() / PERCENT;
-                    if (currentAverageScore > 10.0) {
-                        currentAverageScore = 10.0;
+                    currentScore += currentScore * child.getNiceScoreBonus() / PERCENT;
+                    if (currentScore > MAX_VALUE_AVERAGE_SCORE) {
+                        currentScore = MAX_VALUE_AVERAGE_SCORE;
                     }
-                    child.setAverageScore(currentAverageScore);
+                    child.setAverageScore(currentScore);
                 }
                 /* calculate the sum of average scores */
                 sumAverageScore += child.getAverageScore();
@@ -274,23 +279,35 @@ public final class Command {
         }
     }
 
-
-    public void applyStrategies(Input input, final List<Child> childrenList, int numberRound) {
+    /**
+     *
+     * @param input
+     * @param childrenList
+     * @param numberRound
+     */
+    public void applyStrategies(final Input input, final List<Child> childrenList,
+                                final int numberRound) {
 
         if (input.getAnnualChanges().get(numberRound).getStrategy().equals(CityStrategyEnum.ID)) {
             Context context = new Context(new IdStrategy());
             context.executeStrategy(childrenList);
 
-        } else if (input.getAnnualChanges().get(numberRound).getStrategy().equals(CityStrategyEnum.NICE_SCORE)) {
+        } else if (input.getAnnualChanges().get(numberRound).getStrategy()
+                   .equals(CityStrategyEnum.NICE_SCORE)) {
             Context context = new Context(new AverageScoreStrategy());
             context.executeStrategy(childrenList);
-        } else if (input.getAnnualChanges().get(numberRound).getStrategy().equals(CityStrategyEnum.NICE_SCORE_CITY)) {
+        } else if (input.getAnnualChanges().get(numberRound).getStrategy()
+                   .equals(CityStrategyEnum.NICE_SCORE_CITY)) {
             Context context = new Context(new NiceScoreCityStrategy());
             context.executeStrategy(childrenList);
         }
     }
 
-    public void applyBlankPink(List<Child> childrenList) {
+    /**
+     *
+     * @param childrenList
+     */
+    public void applyBlankPink(final List<Child> childrenList) {
         for (Child child: childrenList) {
             if (child.getElf().equals(ElvesType.PINK)) {
                 PinkElfVisitor pinkElf = new PinkElfVisitor();
@@ -302,8 +319,12 @@ public final class Command {
         }
     }
 
-
-    public void applyYellow(List<Child> childrenList, List<Gift> giftsList) {
+    /**
+     *
+     * @param childrenList
+     * @param giftsList
+     */
+    public void applyYellow(final List<Child> childrenList, final List<Gift> giftsList) {
         for (Child child: childrenList) {
             if (child.getElf().equals(ElvesType.YELLOW)) {
                 YellowElfVisitor yellowElf = new YellowElfVisitor(giftsList);

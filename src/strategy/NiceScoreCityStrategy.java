@@ -10,9 +10,12 @@ import java.util.Comparator;
 import java.util.List;
 
 public class NiceScoreCityStrategy implements Strategy {
+    /**
+     *
+     * @param childrenList
+     */
     @Override
-    public void applyStrategy(List<Child> childrenList) {
-
+    public void applyStrategy(final List<Child> childrenList) {
         Collections.sort(childrenList, Comparator.comparing(Child::getId));
 
         /* create a list of cities */
