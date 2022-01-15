@@ -8,7 +8,7 @@ import java.util.Comparator;
 import java.util.List;
 
 /**
- * The class specific of an average score strategy
+ * The class specific of the nice score strategy
  */
 public class AverageScoreStrategy implements Strategy {
     /**
