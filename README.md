@@ -177,7 +177,7 @@ applied simulations and the resulting final output is returned.
 
 ### ChildFactory
  + This class simulates a Singleton Factory design pattern
- + * createChildInput *
+ * createChildInput *
     + In this method, each type of child is created according to
     of his age using the specific constructors
 * createChild *
