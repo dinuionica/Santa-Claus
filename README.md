@@ -1,7 +1,7 @@
 # Project - Object Oriented Programming
 
-- ##### Ion- Irinel Dinu 325CA, ACS, UPB
-- ##### [ion_irinel.dinu@stud.acs.upb.ro] ()
+- ##### Ion- Irinel Dinu ACS, UPB
+- ##### [dinuionirinel10@gmail.com] 
 - ##### [Github Repo Link] (https://github.com/dinuionica/Santa-Claus)
 
 ##### Time spent solving:
@@ -206,7 +206,7 @@ commands specific to the initial round.
 ### AnnualRound
 + Within this class a method is implemented that simulates and applies
  orders specific to an annual round.
- 
+
 ### Command
 + A number of commands apply to this Singleton class
 specific to a round
