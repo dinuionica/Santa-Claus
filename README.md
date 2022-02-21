@@ -172,13 +172,13 @@ Finally, the final object is sent for mapping and writing.
 ## Implementation
 
 ### Simulation
-    + In this method the input data is taken over, it is modified later
+ + In this method the input data is taken over, it is modified later
 applied simulations and the resulting final output is returned.
 
 ### ChildFactory
-    + This class simulates a Singleton Factory design pattern
-    + * createChildInput *
-    + In this method, each type of child is created according to
+ + This class simulates a Singleton Factory design pattern
+ + * createChildInput *
+  + In this method, each type of child is created according to
     of his age using the specific constructors
 * createChild *
     + Create the types of children in a similar way, but the reasoning applies
