@@ -195,7 +195,7 @@ add to final list
     + similarly scroll through the inpu list, create a new gift that
 is added to the list
 the final of gifts
-    + * createCopyList *
++ * createCopyList *
     + a copy of the child list is created using a type constructor
 deep copy
 
@@ -253,7 +253,7 @@ category, a new list was used to retain this information
 adult, the initial score is added to the child's niceScores list.
 
 ### CreateOutput
-+ In this function the final output is created which will be mapped and written in
+In this function the final output is created which will be mapped and written in
 JSON file. The list of children is processed and for each child
 an output object is created that will be added to the final list.
 Children who have become adults will be wiped out.
