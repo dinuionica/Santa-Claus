@@ -90,9 +90,9 @@ implemented the following methods:
  + applyStrategies:
  + Different strategies are executed depending on the input strategy parameter
 + applyChangesBlackPinkElves
-+ Apply the changes made by the Black and Pink elves using Visitor
+    + Apply the changes made by the Black and Pink elves using Visitor
 + applyChangesYellowElf
- + Apply the changes made by the Yellow Elf using Visitor
+     + Apply the changes made by the Yellow Elf using Visitor
 
 ### Santa Claus is coming to ACS students - Stage 1
 
@@ -136,11 +136,11 @@ for raising children
 generates the final output
 
 + actions
-+ Command -> the class that contains the commands applied to the copy list for
+    + Command -> the class that contains the commands applied to the copy list for
 each round
-+ InitialRound -> the class that applies the commands specific to the initial round
-+ AnnualRound -> the class that applies the commands specific to an annual round
-+ CreateOutput -> the class that builds the final list of copies as output
+    + InitialRound -> the class that applies the commands specific to the initial round
+    + AnnualRound -> the class that applies the commands specific to an annual round
+    + CreateOutput -> the class that builds the final list of copies as output
 
 + interfaces
     + ChildInterface -> child-specific interface used to compute AverageScore
