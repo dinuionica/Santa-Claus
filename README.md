@@ -178,7 +178,7 @@ applied simulations and the resulting final output is returned.
 ### ChildFactory
  + This class simulates a Singleton Factory design pattern
  + * createChildInput *
-  + In this method, each type of child is created according to
+    + In this method, each type of child is created according to
     of his age using the specific constructors
 * createChild *
     + Create the types of children in a similar way, but the reasoning applies
@@ -213,9 +213,9 @@ specific to a round
 + * annualUpdate *
     + add niceScore update to the list of niceScores for the child
 with the desired id
-+ the list of new preferences is scrolled and if within the list of
-The child's preferences are already found this category is deleted. Then
-the new category is added to the first position in the child's preference list.
+    + the list of new preferences is scrolled and if within the list of
+    The child's preferences are already found this category is deleted. Then
+    the new category is added to the first position in the child's preference list.
 + * increaseAge *
     + increases the age of each child in the list
     + using the factory design pattern, the type of each child is updated
