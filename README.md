@@ -172,31 +172,31 @@ Finally, the final object is sent for mapping and writing.
 ## Implementation
 
 ### Simulation
-+ In this method the input data is taken over, it is modified later
+    + In this method the input data is taken over, it is modified later
 applied simulations and the resulting final output is returned.
 
 ### ChildFactory
-+ This class simulates a Singleton Factory design pattern
-+ * createChildInput *
-+ In this method, each type of child is created according to
-of his age using the specific constructors
-+ * createChild *
--Create the types of children in a similar way, but the reasoning applies
+    + This class simulates a Singleton Factory design pattern
+    + * createChildInput *
+    + In this method, each type of child is created according to
+    of his age using the specific constructors
+* createChild *
+    + Create the types of children in a similar way, but the reasoning applies
 for children in the database, not for children received as input.
 
 ### DataBase
 + This Singleton class simulates a database.
 + * createChildrenList *
-+ the factory object is instantiated
-+ scroll through the list of copies received as input
-+ a new type of child is created according to his age, then
+    + the factory object is instantiated
+    + scroll through the list of copies received as input
+    + a new type of child is created according to his age, then
 add to final list
 + * createGiftList *
-+ similarly scroll through the inpu list, create a new gift that
+    + similarly scroll through the inpu list, create a new gift that
 is added to the list
 the final of gifts
-+ * createCopyList *
-+ a copy of the child list is created using a type constructor
+    + * createCopyList *
+    + a copy of the child list is created using a type constructor
 deep copy
 
 ### InitialRound
@@ -217,39 +217,39 @@ with the desired id
 The child's preferences are already found this category is deleted. Then
 the new category is added to the first position in the child's preference list.
 + * increaseAge *
-+ increases the age of each child in the list
-+ using the factory design pattern, the type of each child is updated
+    + increases the age of each child in the list
+    + using the factory design pattern, the type of each child is updated
 depending on his new age.
 + * addNewChildren *
-+ the list of new children is scrolled
-+ a new child is created based on the input data, it is updated
+    + the list of new children is scrolled
+    + a new child is created based on the input data, it is updated
 fields and add
 to the final list of children
 + * addNewGift *
-+ scroll through the list of gifts received as input and create a new one
+    + scroll through the list of gifts received as input and create a new one
 gift based on the information received, which is added to the final list of
 Gifts
 + * updateSantaBudget *
-+ the value of Santa's budget is updated based on the new budget received
+    + the value of Santa's budget is updated based on the new budget received
 as input
 + * removeYoungAdults *
-+ children over the age of one (those who have become
+    + children over the age of one (those who have become
 Young Adult)
 + * calculateBudgetUnit *
-+ the average score for each child is calculated according to the category
+    + the average score for each child is calculated according to the category
 to which the child falls
-+ the amount of average scores is determined, the assigned budget is calculated
+    + the amount of average scores is determined, the assigned budget is calculated
 to each child
-+ for ease of solving, a new field specific to one was used
+    + for ease of solving, a new field specific to one was used
 child who will remember the budget that the child spent
 + * awardingGifts *
-+ sort the list of gifts according to price
-+ the list of gifts is scrolled, and if a child's preference falls
+    + sort the list of gifts according to price
+    + the list of gifts is scrolled, and if a child's preference falls
 in the requirements, the desired gift is given to the child
-+ to determine if a child has already received a gift from someone
+    + to determine if a child has already received a gift from someone
 category, a new list was used to retain this information
 + * addInitialScore *
-+ the list of children is also scrolled for each child who has not become one
+    + the list of children is also scrolled for each child who has not become one
 adult, the initial score is added to the child's niceScores list.
 
 ### CreateOutput
