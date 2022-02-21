@@ -57,10 +57,10 @@ is visited by an elf, depending on the specific type of each.
     which decreases the value of the budget allocated to the child by 30%. Also,
     the amount of the budget that the child has available is also updated.
 + PinkElfVisitor
-+ Within this class, a similar method is implemented
+    + Within this class, a similar method is implemented
     the value of the two budgets increases by 30%;
 + YellowElfVisitor
-+ Within this class a method is implemented through which
+     + Within this class a method is implemented through which
      a gift is given to a child who has not received any gift. It's sorting
      gift list and check
      the existence of the cheapest gift from the favorite category of the child chosen by the elf.
@@ -76,7 +76,7 @@ The list of children is sorted differently depending on the type of strategy.
    + This class contains a strategy method in which the list of children is
    sorted by id;
 + NiceScoreStrategy
-+ Within this class the strategy method is implemented. For starters
+    + Within this class the strategy method is implemented. For starters
 create a list of all cities.
 + The average amount is calculated for each city
 scores and number of children.
