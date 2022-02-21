@@ -121,7 +121,7 @@ list of children
 + InputLoader -> the class that handles input data loading
 
 + output
-    + ChildInputData -> class specific to a child transmitted as final output
+    + ChildOutputData -> class specific to a child transmitted as final output
     + ChildOutputList -> class specific to the final list of children transmitted as
 output
 + Output -> the class that contains all the information transmitted as output
