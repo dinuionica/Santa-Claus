@@ -259,5 +259,4 @@ an output object is created that will be added to the final list.
 Children who have become adults will be wiped out.
 
 To perform sorting and reversing applied to lists, I used
-* Collections *.
-I used the * Jackson library * to read and write files.
+Collections . I used the Jackson library to read and write files.
